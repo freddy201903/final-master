@@ -47,5 +47,9 @@ namespace final.Controllers
         {
             return View();
         }
+        public ActionResult Register()
+        {
+            return View();
+        }
     }
 }
