@@ -51,5 +51,44 @@ namespace final.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Register(
+            string name, string account, string password, string email, string phone, string address
+            //Member newmember
+            )
+        {
+            //var member = db.Members
+            //    .Where(m => m.Account == account)
+            //    .FirstOrDefault();
+            var query = from o in db.Members
+                        where o.Account == account
+                        select o;
+            Member member = query.FirstOrDefault();
+            if (member == null)
+            {
+                Member newmember = new Member();
+                
+                newmember.UserName = name;
+                newmember.Account = account;
+                newmember.Password = password;
+                newmember.Email = email;
+                newmember.PhoneNumber = phone;
+                newmember.Address = address;
+                //newmember.Points = 0;
+                //newmember.Diamonds = 0;
+                //newmember.Victories = 0;
+                //newmember.PersonID = null;
+
+                db.Members.Add(newmember);
+                
+                    db.SaveChanges();
+                    return RedirectToAction("Login");
+            }
+            else {
+                ViewBag.Message = "此帳號已有人使用";
+                return View();
+            }
+            
+        }
     }
 }
