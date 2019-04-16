@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Diamond</title>
+	<script src="Ibootstrap/js/jquery.js"></script>
+	<script type="text/javascript" src="Ibootstrap/js/bootstrap.js"></script>
+	<link rel="stylesheet" href="Ibootstrap/css/bootstrap.css" type="text/css" />
+	<link rel="Shortcut Icon" type="image/x-icon" href="images/logo_icon.ico" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Dbootstrap/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Dbootstrap/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Dbootstrap/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Dbootstrap/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Dbootstrap/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Dbootstrap/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Dbootstrap/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Dbootstrap/vendor/noui/nouislider.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Dbootstrap/css/util.css">
+	<link rel="stylesheet" type="text/css" href="./Dbootstrap/css/main.css">
+<!--===============================================================================================-->
+	<!-- 首頁CSS -->
+	<link rel="stylesheet" href="Ibootstrap/css/index.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="Ibootstrap/css/index.css">
+	<link rel="stylesheet" type="text/css" href="Ibootstrap/css/bootstrap.css">
+	<!-- <link rel="stylesheet" type="text/css" href="Ibootstrap/css/util.css">
+	<link rel="stylesheet" type="text/css" href="Ibootstrap/css/main.css"> 
+	<link rel="stylesheet" type="text/css" href="Ibootstrap/fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="Ibootstrap/fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
+</head>
+ <!--navbar-->
+ <div class="navbar  navbar-inverse navbar-fixed-top">
+		<div class="container">
+
+			<nav class="navbar  navbar-static-top">
+				<div class="container">
+					<div class="navbar-header" style="font-size:20px">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+						<a href="index.html"><img class="logo" src="images/logoRed_sm.png"></img></a>
+						<!--<a class="navbar-brand" href="index.html" style="font-weight:bold">Space Ping-Pong</a></a>-->
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav" style="font-weight: bold">
+							<!--改路徑-->
+                                <li><a href="index.html">首頁</a></li>
+                                <li><a href="#game">開始遊戲</a></li>
+                                <li><a href="#shop">點數商城</a></li>
+                                <li><a href="diamond.html">點數儲值</a></li>
+                                <li><a href="#console">遊戲購買</a></li>
+                                <li><a href="login.html">登入</a></li>
+                                <li><a href="register.html">註冊</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>     
+	</div>
+</div>
+
+<body style="background-image: url('images/bg-02.jpg')";>	
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" onsubmit="return checkForm(this);">
+				<span class="contact100-form-title">
+					<a href="index.html"><img src="images/logoRed_sm.png"></a>
+				</span>
+				<!-- <div id="debug" style="color:#000">...</div> -->
+
+				<div class="wrap-input100 validate-input bg1" data-validate = "輸入錯誤">
+					<span class="label-input100">信用卡卡號</span>
+					<input id="cardNum" class="input100" type="text" name="cardNum"  maxlength="19">
+				</div>
+
+				<div class="wrap-input100 validate-input bg1" data-validate = "輸入錯誤">
+						<span class="label-input100">持卡人姓名</span>
+						<input id="cardName" class="input100" type="text" name="name" >
+					</div>
+
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "輸入錯誤">
+					<span class="label-input100">到期月份</span>
+					<input id="cardMon" class="input100" type="text" name="month"  maxlength="2">
+				</div>
+
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "輸入錯誤">
+						<span class="label-input100">到期年份</span>
+						<input id="cardYear" class="input100" type="text" name="year" maxlength="2">
+				</div>
+
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "輸入錯誤">
+					<span class="label-input100">授權碼</span>
+					<input id="cardCode" class="input100" type="text" name="lastThreeNum" maxlength="3">
+				</div>
+
+				<div class="wrap-input100 input100-select bg1">
+					<span class="label-input100">鑽石點數</span>
+					<div>
+						<select id="point" class="js-select2" name="service" style="color:#000">
+							<option>500 點</option>
+							<option>1000 點</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+				</div>
+
+				
+
+				<div class="container-contact100-form-btn">
+					<button type="button" class="contact100-form-btn" data-toggle="modal" data-target="#confirm" onclick="test()">
+						<span>
+							完成
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+
+				
+				<!-- Modal -->
+				<div class="modal fade" id="confirm" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+						</div>
+						<div class="modal-body" id="report" style="color: #000; text-align: center">
+						
+						</div>
+						<div class="modal-footer">
+						<button type="button" class="okBtn" data-dismiss="modal">確認</button>
+						</div>
+					</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+<!--===============================================================================================-->
+	<script src="Dbootstrap/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="Dbootstrap/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="Dbootstrap/vendor/bootstrap/js/popper.js"></script>
+	<script src="Dbootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./Dbootstrap/vendor/daterangepicker/moment.min.js"></script>
+	<script src="./Dbootstrap/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="./Dbootstrap/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="./Dbootstrap/js/main.js"></script>
+<!--===============================================================================================-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+   <script>
+        window.onload =function() {
+            document.getElementById("cardNum").onkeyup =function() {
+                  this.value =this.value.replace(/\s/g,'').replace(/\D/g,'').replace(/(\d{4})(?=\d)/g,"$1 ");;
+            };
+        };
+    </script>
+
+
+</body>
+
+<!-- 假的信用卡驗證付款 -->
+<script>
+	
+	function test(){
+		const Name = document.getElementById("cardName").value;
+		const Num = document.getElementById("cardNum").value;
+		const month = document.getElementById("cardMon").value;
+		const year = document.getElementById("cardYear").value;
+		const code = document.getElementById("cardCode").value;
+		const diamondPoint = document.getElementById("point").value;
+
+		if (Name == "ALEX" && Num == "1234 2234 3234 4234" && code == "888"){
+			document.getElementById("report").innerHTML = "鑽石點數 "+ diamondPoint + "儲值成功！";
+		}else{
+			document.getElementById("report").innerHTML = "資料有誤或填寫不完整，請重新輸入！";
+		}
+	}
+	
+</script>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="~/project_final/Ibootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="~/project_final/Ibootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="~/project_final/Ibootstrap/css/bootstrap.css" type="text/css" />
+    <link rel="Shortcut Icon" type="image/x-icon" href="~/project_final/images/logo_icon.ico" />
+
+    <!-- 首頁CSS -->
+    <link rel="stylesheet" href="~/project_final/Ibootstrap/css/index.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/project_final/Ibootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/project_final/Ibootstrap/css/util.css">
+</head>
+<!--navbar-->
+<div class="navbar  navbar-inverse navbar-fixed-top">
+    <div class="container">
+
+        <nav class="navbar  navbar-static-top">
+            <div class="container">
+                <div class="navbar-header" style="font-size:20px">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html"><img class="logo" src="~/project_final/images/logoRed_sm.png"></img></a>
+                    <!--<a class="navbar-brand" href="index.html" style="font-weight:bold">Space Ping-Pong</a></a>-->
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" style="font-weight: bold">
+                        <!--改路徑-->
+                        <li>@Html.ActionLink("首頁","Index","Home")</li>
+                        <li><a href="game">開始遊戲</a></li>
+                        <li><a href="#shop">點數商城</a></li>
+                        <li><a href="diamond.html">點數儲值</a></li>
+                        <li><a href="#console">遊戲購買</a></li>
+                        <li><a @Html.ActionLink("登入","Login","Home")</li>
+                        <li><a href="register.html">註冊</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</div>
+<body>
+    
+
+        @RenderBody()
+        <hr />
+ 
+
+ 
+</body>
+</html>

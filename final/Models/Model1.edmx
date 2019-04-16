@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SpacepingpongDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DaimandOrder">
+          <Key>
+            <PropertyRef Name="MemberNumber" />
+          </Key>
+          <Property Name="MemberNumber" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dOrderGuid" Type="nvarchar" MaxLength="50" />
+          <Property Name="Account" Type="varchar" MaxLength="50" />
+          <Property Name="dReceiver" Type="nvarchar" MaxLength="50" />
+          <Property Name="dEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="dAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DaimandOrderDetail">
+          <Key>
+            <PropertyRef Name="MemberNumber" />
+          </Key>
+          <Property Name="MemberNumber" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dOrderGuid" Type="nvarchar" MaxLength="50" />
+          <Property Name="Account" Type="varchar" MaxLength="50" />
+          <Property Name="dProductID" Type="nvarchar" MaxLength="50" />
+          <Property Name="dProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="dPrice" Type="int" />
+          <Property Name="dQty" Type="int" />
+          <Property Name="dIsApproved" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DaimandStore">
+          <Key>
+            <PropertyRef Name="MemberNumber" />
+          </Key>
+          <Property Name="MemberNumber" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dProductID" Type="nvarchar" MaxLength="50" />
+          <Property Name="dProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="dPrice" Type="int" />
+          <Property Name="dImg" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FaceRecognization">
+          <Key>
+            <PropertyRef Name="FaceID" />
+          </Key>
+          <Property Name="MemberNumber" Type="bigint" Nullable="false" />
+          <Property Name="FaceID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberNumber" />
+          </Key>
+          <Property Name="MemberNumber" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Account" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="200" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="Points" Type="bigint" Nullable="false" />
+          <Property Name="Diamonds" Type="bigint" Nullable="false" />
+          <Property Name="Victories" Type="bigint" Nullable="false" />
+          <Property Name="PersonID" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlayList">
+          <Key>
+            <PropertyRef Name="Num" />
+          </Key>
+          <Property Name="Num" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberNumber" Type="bigint" Nullable="false" />
+          <Property Name="Victory" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PlayDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PointOrder">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="MemberNumber" Type="bigint" Nullable="false" />
+          <Property Name="OrderID" Type="bigint" Nullable="false" />
+          <Property Name="Recipient" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RecipientEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RecipientAddress" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="OrderDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PointShoppingCart">
+          <Key>
+            <PropertyRef Name="Num" />
+          </Key>
+          <Property Name="Num" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberNumber" Type="bigint" Nullable="false" />
+          <Property Name="OrderID" Type="bigint" Nullable="false" />
+          <Property Name="ProductID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CurrentPrice" Type="bigint" Nullable="false" />
+          <Property Name="Amount" Type="bigint" Nullable="false" />
+          <Property Name="CheckOut" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PointStore">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="bigint" Nullable="false" />
+          <Property Name="Introduction" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Stock" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SpacepingpongDatabaseModelStoreContainer">
+          <EntitySet Name="DaimandOrder" EntityType="Self.DaimandOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaimandOrderDetail" EntityType="Self.DaimandOrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaimandStore" EntityType="Self.DaimandStore" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FaceRecognization" EntityType="Self.FaceRecognization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlayList" EntityType="Self.PlayList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PointOrder" EntityType="Self.PointOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PointShoppingCart" EntityType="Self.PointShoppingCart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PointStore" EntityType="Self.PointStore" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SpacepingpongDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DaimandOrder">
+          <Key>
+            <PropertyRef Name="MemberNumber" />
+          </Key>
+          <Property Name="MemberNumber" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dOrderGuid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dReceiver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="DaimandOrderDetail">
+          <Key>
+            <PropertyRef Name="MemberNumber" />
+          </Key>
+          <Property Name="MemberNumber" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dOrderGuid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dPrice" Type="Int32" />
+          <Property Name="dQty" Type="Int32" />
+          <Property Name="dIsApproved" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DaimandStore">
+          <Key>
+            <PropertyRef Name="MemberNumber" />
+          </Key>
+          <Property Name="MemberNumber" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dPrice" Type="Int32" />
+          <Property Name="dImg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FaceRecognization">
+          <Key>
+            <PropertyRef Name="FaceID" />
+          </Key>
+          <Property Name="MemberNumber" Type="Int64" Nullable="false" />
+          <Property Name="FaceID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberNumber" />
+          </Key>
+          <Property Name="MemberNumber" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Points" Type="Int64" Nullable="false" />
+          <Property Name="Diamonds" Type="Int64" Nullable="false" />
+          <Property Name="Victories" Type="Int64" Nullable="false" />
+          <Property Name="PersonID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlayList">
+          <Key>
+            <PropertyRef Name="Num" />
+          </Key>
+          <Property Name="Num" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberNumber" Type="Int64" Nullable="false" />
+          <Property Name="Victory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PlayDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="PointOrder">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="MemberNumber" Type="Int64" Nullable="false" />
+          <Property Name="OrderID" Type="Int64" Nullable="false" />
+          <Property Name="Recipient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RecipientEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RecipientAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="PointShoppingCart">
+          <Key>
+            <PropertyRef Name="Num" />
+          </Key>
+          <Property Name="Num" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberNumber" Type="Int64" Nullable="false" />
+          <Property Name="OrderID" Type="Int64" Nullable="false" />
+          <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CurrentPrice" Type="Int64" Nullable="false" />
+          <Property Name="Amount" Type="Int64" Nullable="false" />
+          <Property Name="CheckOut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PointStore">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Int64" Nullable="false" />
+          <Property Name="Introduction" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Stock" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SpacepingpongDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DaimandOrders" EntityType="Self.DaimandOrder" />
+          <EntitySet Name="DaimandOrderDetails" EntityType="Self.DaimandOrderDetail" />
+          <EntitySet Name="DaimandStores" EntityType="Self.DaimandStore" />
+          <EntitySet Name="FaceRecognizations" EntityType="Self.FaceRecognization" />
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="PlayLists" EntityType="Self.PlayList" />
+          <EntitySet Name="PointOrders" EntityType="Self.PointOrder" />
+          <EntitySet Name="PointShoppingCarts" EntityType="Self.PointShoppingCart" />
+          <EntitySet Name="PointStores" EntityType="Self.PointStore" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SpacepingpongDatabaseModelStoreContainer" CdmEntityContainer="SpacepingpongDatabaseEntities">
+          <EntitySetMapping Name="DaimandOrders">
+            <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.DaimandOrder">
+              <MappingFragment StoreEntitySet="DaimandOrder">
+                <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+                <ScalarProperty Name="dOrderGuid" ColumnName="dOrderGuid" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="dReceiver" ColumnName="dReceiver" />
+                <ScalarProperty Name="dEmail" ColumnName="dEmail" />
+                <ScalarProperty Name="dAddress" ColumnName="dAddress" />
+                <ScalarProperty Name="dDate" ColumnName="dDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaimandOrderDetails">
+            <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.DaimandOrderDetail">
+              <MappingFragment StoreEntitySet="DaimandOrderDetail">
+                <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+                <ScalarProperty Name="dOrderGuid" ColumnName="dOrderGuid" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="dProductID" ColumnName="dProductID" />
+                <ScalarProperty Name="dProductName" ColumnName="dProductName" />
+                <ScalarProperty Name="dPrice" ColumnName="dPrice" />
+                <ScalarProperty Name="dQty" ColumnName="dQty" />
+                <ScalarProperty Name="dIsApproved" ColumnName="dIsApproved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaimandStores">
+            <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.DaimandStore">
+              <MappingFragment StoreEntitySet="DaimandStore">
+                <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+                <ScalarProperty Name="dProductID" ColumnName="dProductID" />
+                <ScalarProperty Name="dProductName" ColumnName="dProductName" />
+                <ScalarProperty Name="dPrice" ColumnName="dPrice" />
+                <ScalarProperty Name="dImg" ColumnName="dImg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FaceRecognizations">
+            <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.FaceRecognization">
+              <MappingFragment StoreEntitySet="FaceRecognization">
+                <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+                <ScalarProperty Name="FaceID" ColumnName="FaceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Points" ColumnName="Points" />
+                <ScalarProperty Name="Diamonds" ColumnName="Diamonds" />
+                <ScalarProperty Name="Victories" ColumnName="Victories" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayLists">
+            <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.PlayList">
+              <MappingFragment StoreEntitySet="PlayList">
+                <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+                <ScalarProperty Name="Victory" ColumnName="Victory" />
+                <ScalarProperty Name="PlayDate" ColumnName="PlayDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PointOrders">
+            <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.PointOrder">
+              <MappingFragment StoreEntitySet="PointOrder">
+                <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Recipient" ColumnName="Recipient" />
+                <ScalarProperty Name="RecipientEmail" ColumnName="RecipientEmail" />
+                <ScalarProperty Name="RecipientAddress" ColumnName="RecipientAddress" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PointShoppingCarts">
+            <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.PointShoppingCart">
+              <MappingFragment StoreEntitySet="PointShoppingCart">
+                <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="CurrentPrice" ColumnName="CurrentPrice" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PointStores">
+            <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.PointStore">
+              <MappingFragment StoreEntitySet="PointStore">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

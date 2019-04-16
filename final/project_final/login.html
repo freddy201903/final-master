@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <script src="Ibootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="Ibootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="Ibootstrap/css/bootstrap.css" type="text/css" />
+    <link rel="Shortcut Icon" type="image/x-icon" href="images/logo_icon.ico" />
+
+    <!-- 首頁CSS -->
+    <link rel="stylesheet" href="Ibootstrap/css/index.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="Ibootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="Ibootstrap/css/util.css">
+
+    <!-- 登入用CSS -->
+    <!--===============================================================================================-->
+        <!-- <link rel="stylesheet" type="text/css" href="./Lbootstarp/vendor/bootstrap/css/bootstrap.min.css"> -->
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="./Lbootstrap/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="./Lbootstrap/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="./Lbootstrap/vendor/animate/animate.css">
+    <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="./Lbootstrap/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="./Lbootstrap/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="./Lbootstrap/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="./Lbootstrap/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="./Lbootstrap/css/util.css">
+        <link rel="stylesheet" type="text/css" href="./Lbootstrap/css/main.css">
+    <!--===============================================================================================-->
+
+    <!-- 註冊用CSS -->
+    <!-- Icons font CSS-->
+    <link href="./Rbootstrap/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="./Rbootstrap/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- Vendor CSS-->
+    <link href="./Rbootstrap/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="./Rbootstrap/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <!-- Main CSS-->
+    <link href="./Rbootstrap/css/main.css" rel="stylesheet" media="all">
+ 
+ </head>
+
+ <!--navbar-->
+ <div class="navbar  navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <nav class="navbar  navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header" style="font-size:20px">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                        <a href="index.html"><img class="logo" src="images/logoRed_sm.png"></img></a>
+                        <!--<a class="navbar-brand" href="index.html" style="font-weight:bold">Space Ping-Pong</a></a>-->
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav" style="font-weight: bold">
+                            <!--改路徑-->
+                                <li><a href="index.html">首頁</a></li>
+                                <li><a href="#game">開始遊戲</a></li>
+                                <li><a href="#shop">點數商城</a></li>
+                                <li><a href="diamond.html">點數儲值</a></li>
+                                <li><a href="#console">遊戲購買</a></li>
+                                <li><a href="login.html">登入</a></li>
+                                <li><a href="register.html">註冊</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+        </div>
+    </div>
+
+    <body style="background-image: url('images/bg-02.jpg');">
+        <div class="limiter">
+                <div class="container-login100">
+                    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                        <form class="login100-form validate-form">
+                            <span class="login100-form-title p-b-49">
+                                <a href="index.html"><img src="images/logoRed_sm.png"></a>
+                            </span>
+        
+                            <div class="wrap-input100 validate-input m-b-23" data-validate = "帳號必須填寫！">
+                                <span class="label-input100">帳號</span>
+                                <input class="input100" type="text" name="username" placeholder="請輸入帳號">
+                                <span class="focus-input100" data-symbol="&#xf206;"></span>
+                            </div>
+        
+                            <div class="wrap-input100 validate-input" data-validate="密碼必須填寫！">
+                                <span class="label-input100">密碼</span>
+                                <input class="input100" type="password" name="pass" placeholder="請輸入密碼">
+                                <span class="focus-input100" data-symbol="&#xf190;"></span>
+                            </div>
+                            
+                            <div class="text-right p-t-8 p-b-31">
+                                <!-- <a href="#">
+                                    Forgot password?
+                                </a> -->
+                            </div> 
+                            
+                            <div class="container-login100-form-btn" style="padding-bottom: 2em">
+                                <div class="wrap-login100-form-btn">
+                                    <div class="login100-form-bgbtn"></div>
+                                    <button class="login100-form-btn">
+                                        登    入
+                                    </button>
+                                </div>
+                            </div>
+        
+                            <div class="container-login200-form-btn">
+                                    <div class="wrap-login200-form-btn">
+                                        <div class="login200-form-bgbtn"></div>
+                                        <button type="button" class="login200-form-btn" data-toggle="modal" data-target="#signUp">
+                                            註    冊
+                                        </button>
+                                    </div>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="signUp" tabindex="-1" data-backdrop="static">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <span class="login100-form-title"><a href="index.html"><img src="./images/logoRed_sm.png"></a></span>
+                                        <button type="button" class="close" data-dismiss="modal">
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                                <!-- 註冊表單 -->
+                                                <div class="page-wrapper">
+                                                        <div class="wrapper wrapper--w790">
+                                                            <div class="card card-5">
+                                                                <div class="card-heading">
+                                                                    <h2 class="title">請填寫下列資訊內容</h2>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <form method="POST">
+                                                                            <div class="form-row">
+                                                                                    <div class="name">真實姓名</div>
+                                                                                    <div class="value">
+                                                                                        <div class="input-group">
+                                                                                            <input class="input--style-5" type="text" name="name" required="required">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                        <div class="form-row">
+                                                                            <div class="name">會員帳號</div>
+                                                                            <div class="value">
+                                                                                <div class="input-group">
+                                                                                    <input class="input--style-5" type="text" name="account" required="required">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-row">
+                                                                                <div class="name">會員密碼</div>
+                                                                                <div class="value">
+                                                                                    <div class="input-group">
+                                                                                        <input class="input--style-5" type="text" name="password" type="password" required="required">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        <div class="form-row">
+                                                                            <div class="name">Email</div>
+                                                                            <div class="value">
+                                                                                <div class="input-group">
+                                                                                    <input class="input--style-5" type="email" name="email" required="required">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-row">
+                                                                                <div class="name">聯絡電話</div>
+                                                                                <div class="value">
+                                                                                    <div class="input-group">
+                                                                                        <input class="input--style-5" type="email" name="phone" maxlength="11" placeholder="格式: 0910-123456" required="required">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        <div class="form-row">
+                                                                                <div class="name">聯絡地址</div>
+                                                                                <div class="value">
+                                                                                    <div class="input-group">
+                                                                                        <input class="input--style-5" type="email" name="address" required="required">
+                                                                                    </div>
+                                                                                </div>  
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>   
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <div style="float:left">
+                                                <button type="button" class="faceDetect" >臉部辨識</button>
+                                            </div>
+                                            <div>
+                                                <button type="button" class="cancelBtn" data-dismiss="modal">取消</button>
+                                                <button type="submit" class="okBtn">確認</button>
+                                            </div>
+           
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 排版用 -->
+                            <div class="txt1 text-center p-t-54 p-b-20">
+                                <!-- <span>
+                                    Or Sign Up Using
+                                </span> -->
+                            </div>
+        
+                            <div class="flex-c-m">
+                                <a href="#" class="login100-social-item bg1">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+        
+                                <a href="#" class="login100-social-item bg3">
+                                    <i class="fa fa-google"></i>
+                                </a>
+                            </div>
+        
+                            <div class="flex-col-c p-t-20">
+                                <span class="txt1">
+                                    <a href="index.html" class="txt2">回到首頁</a>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        
+            <div id="dropDownSelect1"></div>
+                
+            <!--===============================================================================================-->
+                <script src="./Lbootstrap/vendor/jquery/jquery-3.2.1.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="./Lbootstrap/vendor/animsition/js/animsition.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="./Lbootstrap/vendor/bootstrap/js/popper.js"></script>
+                <script src="./Lbootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="./Lbootstrap/vendor/select2/select2.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="./Lbootstrap/vendor/daterangepicker/moment.min.js"></script>
+                <script src="./Lbootstrap/vendor/daterangepicker/daterangepicker.js"></script>
+            <!--===============================================================================================-->
+                <script src="./Lbootstrap/vendor/countdowntime/countdowntime.js"></script>
+            <!--===============================================================================================-->
+                <script src="./Lbootstrap/js/main.js"></script>
+            <!--===============================================================================================-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+            </body>
+    </body>

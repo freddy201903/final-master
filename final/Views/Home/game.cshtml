@@ -1,0 +1,99 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/game.js"></script>
+
+
+    <script type="text/javascript">
+    // Create a client instance
+        //var client = new Paho.MQTT.Client("https://test20190415.azurewebsites.net", Number(8883), "clientId");
+        client = new Paho.MQTT.Client("m16.cloudmqtt.com", 31524, "client_id");
+        //Example client = new Paho.MQTT.Client("m11.cloudmqtt.com", 32903, "web_" + parseInt(Math.random() * 100, 10));
+
+        // set callback handlers
+        client.onConnectionLost = onConnectionLost;
+        client.onMessageArrived = onMessageArrived;
+        var options = {
+            useSSL: true,
+            userName: "eigqtvxo",
+            password: "PgB3-RMhwTQf",
+            onSuccess: onConnect,
+            onFailure: doFail
+        }
+
+        // connect the client
+        client.connect(options);
+        //client.connect({ onSuccess: onConnect });
+
+        // called when the client connects
+        function onConnect() {
+            // Once a connection has been made, make a subscription and send a message.
+            console.log("onConnect");
+            client.subscribe("space/+");
+            message = new Paho.MQTT.Message("Hello CloudMQTT");
+            message.destinationName = "/cloudmqtt";
+            client.send(message);
+        }
+
+        function doFail(e) {
+            console.log(e);
+        }
+
+        // called when the client loses its connection
+        function onConnectionLost(responseObject) {
+            if (responseObject.errorCode !== 0) {
+                console.log("onConnectionLost:" + responseObject.errorMessage);
+            }
+        }
+
+        // called when a message arrives
+        function onMessageArrived(message) {
+            if (message.destinationName == "space/blue") {
+                //var object1=JSON.parse(message.payloadString);
+                //paddleRightX2 = object1.x;
+                //paddleRightY2 = object1.y;
+                paddleRightY2 = message.payloadString;
+            } else {
+                console.log("主题：" + message.destinationName);
+                //var object2=JSON.parse(message.payloadString);
+                //paddleLeftX1 = object2.x;
+                //paddleLeftY1 = object2.y;
+                paddleLeftY1 = message.payloadString;
+            }
+
+            console.log("onMessageArrived:" + message.payloadString);
+            console.log("主题：" + message.destinationName);
+            // console.log("主题："+message.topic);
+            // document.getElementById("test").innerHTML = message.payloadString;
+        }</script>
+    <style type="text/css">
+
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <p></p><p></p>
+    <p></p>
+
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <div id="debug">qq</div>
+
+    <script>
+        console.log()
+
+        debug.innerHTML = ""</script>
+
+</body>
+</html>
+
