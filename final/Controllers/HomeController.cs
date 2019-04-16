@@ -90,5 +90,9 @@ namespace final.Controllers
             }
             
         }
+        public ActionResult Rank()
+        {
+            return View();
+        }
     }
 }

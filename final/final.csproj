@@ -285,6 +285,8 @@
     <Content Include="project_final\Lbootstrap\vendor\select2\select2.min.css" />
     <Content Include="project_final\Lbootstrap\vendor\select2\select2.min.js" />
     <Content Include="project_final\login.html" />
+    <Content Include="project_final\Rank\JavaScript.js" />
+    <Content Include="project_final\Rank\StyleSheet1.css" />
     <Content Include="project_final\Rbootstrap\css\main.css" />
     <Content Include="project_final\Rbootstrap\css\main.min.css" />
     <Content Include="project_final\Rbootstrap\js\global.js" />
@@ -588,6 +590,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Rank.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
